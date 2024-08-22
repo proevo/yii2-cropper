@@ -7,10 +7,12 @@
 /** @var $unique string */
 /** @var $cropperOptions [] */
 
-$modalLabel = Yii::t('cropper', 'Image Crop Editor');
+//$modalLabel = Yii::t('cropper', 'Image Crop Editor');
+$modalLabel = 'Editor de imagem';
 $browseLabel = $cropperOptions['icons']['browse'] . ' ' . Yii::t('cropper', 'Browse');
 $cropLabel = $cropperOptions['icons']['crop'] . ' ' . Yii::t('cropper', 'Crop');
-$closeLabel = $cropperOptions['icons']['close'] . ' ' . Yii::t('cropper', 'Crop') . ' & ' . Yii::t('cropper', 'Close');
+//$closeLabel = $cropperOptions['icons']['close'] . ' ' . Yii::t('cropper', 'Crop') . ' & ' . Yii::t('cropper', 'Close');
+$closeLabel = $cropperOptions['icons']['close'] . ' Cortar';
 
 $cropWidth = $cropperOptions['width'];
 $cropHeight = $cropperOptions['height'];
@@ -22,7 +24,7 @@ echo '<div class="modal fade" tabindex="-1" role="dialog" id="cropper-modal-'. $
                 .'<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
                 .'<h4 class="modal-title" id="modalLabel-'. $unique .'">'. $modalLabel .'</h4>'
             .'</div>'
-            .'<div class="modal-body">'
+            .'<div class="modal-body" style="height: 75vh; overflow: auto;">'
                 .'<div><img id="cropper-image-'. $unique .'" src="" alt=""></div>'
             .'</div>'
             .'<div class="modal-footer">'
@@ -36,7 +38,6 @@ echo '<div class="modal fade" tabindex="-1" role="dialog" id="cropper-modal-'. $
                         .'<button type="button" class="btn btn-primary rotate-right">'.$cropperOptions['icons']['rotate-right'].'</button>'
                     .'</div>&nbsp;'
                 .'</div>'
-                .'<button type="button" id="crop-button-'. $unique .'" class="btn btn-success">'. $cropLabel .'</button>'
                 .'<button type="button" id="close-button-'. $unique .'" class="btn btn-danger" data-dismiss="modal">'. $closeLabel .'</button>'
             .'</div>'
         .'</div>'
